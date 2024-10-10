@@ -1,0 +1,30 @@
+{
+  "name": "@flancer32/repo-tmpl-tg-bot",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A simple Telegram bot built with the grammY library.",
+  "homepage": "https://github.com/flancer32/repo-tmpl-tg-bot/",
+  "bugs": {
+    "url": "https://github.com/flancer32/repo-tmpl-tg-bot/issues",
+    "email": "alex@flancer64.com"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Alex Gusev",
+    "email": "alex@flancer64.com",
+    "url": "https://github.com/flancer64"
+  },
+  "repository": "github:flancer32/repo-tmpl-tg-bot",
+  "scripts": {
+    "help": "node ./bin/tequila.mjs -h",
+    "start": "node ./bin/tequila.mjs tg-bot-start",
+    "stop": "node ./bin/tequila.mjs tg-bot-stop",
+    "version": "node ./bin/tequila.mjs core-version",
+    "web-start": "node ./bin/tequila.mjs web-server-start",
+    "web-stop": "node ./bin/tequila.mjs web-server-stop"
+  },
+  "dependencies": {
+    "@flancer32/teq-telegram-bot": "github:flancer32/teq-telegram-bot"
+  },
+  "devDependencies": {}
+}
