@@ -1,7 +1,7 @@
 /**
  * The handler for 'message' filter.
  */
-export default class Ns_App_Back_Bot_Filter_Message {
+export default class Demo_Crudl_Back_Bot_Filter_Message {
     /**
      * The factory function to inject the deps and create the handler.
      *

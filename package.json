@@ -1,11 +1,11 @@
 {
-  "name": "@flancer32/repo-tmpl-tg-bot",
+  "name": "@flancer64/tg-demo-crudl",
   "version": "0.1.0",
   "type": "module",
   "description": "A simple Telegram bot built with the grammY library.",
-  "homepage": "https://github.com/flancer32/repo-tmpl-tg-bot/",
+  "homepage": "https://github.com/flancer64/tg-demo-crudl/",
   "bugs": {
-    "url": "https://github.com/flancer32/repo-tmpl-tg-bot/issues",
+    "url": "https://github.com/flancer64/tg-demo-crudl/issues",
     "email": "alex@flancer64.com"
   },
   "license": "Apache-2.0",
@@ -14,7 +14,7 @@
     "email": "alex@flancer64.com",
     "url": "https://github.com/flancer64"
   },
-  "repository": "github:flancer32/repo-tmpl-tg-bot",
+  "repository": "github:flancer64/tg-demo-crudl",
   "scripts": {
     "help": "node ./bin/tequila.mjs -h",
     "start": "node ./bin/tequila.mjs tg-bot-start",
@@ -24,7 +24,8 @@
     "web-stop": "node ./bin/tequila.mjs web-server-stop"
   },
   "dependencies": {
-    "@flancer32/teq-telegram-bot": "github:flancer32/teq-telegram-bot"
-  },
-  "devDependencies": {}
+    "@flancer32/teq-telegram-bot": "github:flancer32/teq-telegram-bot",
+    "@teqfw/db": "^0.22.1",
+    "better-sqlite3": "^11.3.0"
+  }
 }

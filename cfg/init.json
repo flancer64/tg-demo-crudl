@@ -5,11 +5,11 @@
   "@teqfw/core": {
     "devMode": true
   },
-  "@teqfw/web": {
-    "server": {
-      "port": 8080,
-      "useHttp1": true
+  "@teqfw/db": {
+    "client": "better-sqlite3",
+    "connection": {
+      "filename": "./var/data.db"
     },
-    "urlBase": "virtual.server.com"
+    "useNullAsDefault": true
   }
 }

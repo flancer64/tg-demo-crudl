@@ -26,7 +26,7 @@ It provides the following features:
 Create the npm application and add the bot library to this app:
 
 ```shell
-$ npm i @flancer32/repo-tmpl-tg-bot
+$ npm i @flancer64/tg-demo-crudl
 ```
 
 ## Usage

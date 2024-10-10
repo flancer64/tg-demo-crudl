@@ -1,0 +1,17 @@
+{
+  "entity": {
+    "phone": {
+      "comment": "The registry for the phones",
+      "attr": {
+        "id": {"type": "id"},
+        "name": {"type": "string"},
+        "phone": {"type": "string"},
+        "date_created": {
+          "comment": "Date-time when record was created.",
+          "type": "datetime",
+          "default": "current"
+        }
+      }
+    }
+  }
+}

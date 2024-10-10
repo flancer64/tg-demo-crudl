@@ -1,21 +1,10 @@
 /**
- * The handler for 'settings' command.
+ * The handler for the 'settings' command.
  */
-export default class Ns_App_Back_Bot_Cmd_Settings {
+export default class Demo_Crudl_Back_Bot_Cmd_Settings {
     constructor() {
-        return async (ctx) => {
-            const from = ctx.message.from;
-            const msgDef = `
-SETTINGS
-`;
-            const msgRu = `
-Настройки 
-`;
-            const msg = (from.language_code === 'ru') ? msgRu : msgDef;
-            // https://core.telegram.org/bots/api#sendmessage
-            await ctx.reply(msg, {
-                parse_mode: 'MarkdownV2',
-            });
+        return (ctx) => {
+            ctx.reply('Here you can configure your bot settings.');
         };
     }
 }

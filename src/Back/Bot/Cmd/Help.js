@@ -1,31 +1,28 @@
 /**
- * The handler for 'help' command.
+ * The handler for the 'help' command.
  */
-export default class Ns_App_Back_Bot_Cmd_Help {
-    constructor() {
+export default class Demo_Crudl_Back_Bot_Cmd_Help {
+    /**
+     * @param {typeof Demo_Crudl_Back_Enum_Bot_Command} CMD
+     */
+    constructor(
+        {
+            Demo_Crudl_Back_Enum_Bot_Command$: CMD,
+        }
+    ) {
         return async (ctx) => {
-            const from = ctx.message.from;
-            const msgDef = `
-This is a test bot for demo.
-
-Available commands are:
-
-/help - display this text. 
-/settings - configure this bot. 
-/start - start the bot. 
+            const msg = `
+Available commands:
+<b>/${CMD.CREATE}</b> - Create a new phone record (/create name phone).
+<b>/${CMD.DELETE}</b> - Delete phone record (/delete id).
+<b>/${CMD.HELP}</b> - Display this help message.
+<b>/${CMD.LIST}</b> - List all phone records.
+<b>/${CMD.READ}</b> - Read phone record (/read id).
+<b>/${CMD.SETTINGS}</b> - Adjust your bot settings.
+<b>/${CMD.START}</b> - Start interacting with the bot.
+<b>/${CMD.UPDATE}</b> - Update phone record (/update id new_name new_phone).
 `;
-            const msgRu = `
-Это тестовый бот.
-
-Доступные команды:
-
-/help - вывести этот текст. 
-/settings - настройка бота. 
-/start - начало работы. 
-`;
-            const msg = (from.language_code === 'ru') ? msgRu : msgDef;
-            // https://core.telegram.org/bots/api#sendmessage
-            await ctx.reply(msg, {
+            ctx.reply(msg, {
                 parse_mode: 'HTML',
             });
         };

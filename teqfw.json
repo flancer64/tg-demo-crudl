@@ -1,12 +1,12 @@
 {
   "@teqfw/di": {
     "autoload": {
-      "ns": "Ns_App",
+      "ns": "Demo_Crudl",
       "path": "./src"
     },
     "replaces": {
       "Telegram_Bot_Back_Api_Setup": {
-        "back": "Ns_App_Back_Di_Replace_Telegram_Bot_Back_Api_Setup"
+        "back": "Demo_Crudl_Back_Bot_Setup"
       }
     }
   }
