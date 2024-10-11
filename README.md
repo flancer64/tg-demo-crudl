@@ -1,56 +1,56 @@
-# repo-tmpl-tg-bot
 
-The base npm package for building Telegram bots using [grammY](https://grammy.dev/)
-and [@teqfw/di](https://github.com/teqfw/di).
+# @flancer64/tg-demo-crudl
 
-## Overview
+This repository demonstrates a simple Telegram bot that processes basic commands with arguments. The bot is built using
+a CRUDL (Create, Read, Update, Delete, List) pattern to manage data in a database.
 
-This package enables the creation of Telegram bots using the grammY
-library.
+## Features
 
-It provides the following features:
+The bot processes the following commands:
 
-* Loading the bot's configuration (the API access token) from external sources (e.g., JSON file).
-* Running the Node.js application in two modes:
-    * As a bot using long polling.
-    * As a webhook server:
-        * HTTP & HTTP/2 as an application server behind a proxy server.
-        * HTTPS as a standalone server.
-* Common activity (setup of commands on startup, webhook registration, etc.)
-* Defining extension points where applications can add custom logic.
+1. **Create**: Adds a new record to the database.
+    - Format: `/create ${name} ${phone}`
+    - Example: `/create John 123456789`
 
-![The Use Cases](./doc/img/lib.uc.png)
+2. **Read**: Retrieves a specific record by ID.
+    - Format: `/read ${id}`
+    - Example: `/read 1`
 
-## Installation
+3. **Update**: Modifies an existing record.
+    - Format: `/update ${id} ${new_name} ${new_phone}`
+    - Example: `/update 1 Jane 987654321`
 
-Create the npm application and add the bot library to this app:
+4. **Delete**: Removes a record from the database.
+    - Format: `/delete ${id}1`
+    - Example: `/delete 1`
 
-```shell
-$ npm i @flancer64/tg-demo-crudl
-```
+5. **List**: Displays all records.
+    - Format: `/list`
 
 ## Usage
 
-```
-$ ./bin/tequila.mjs help
-$ ./bin/tequila.mjs tg-bot-start        # long polling mode
-$ ./bin/tequila.mjs tg-bot-stop
-$ ./bin/tequila.mjs web-server-start    # webhook mode
-$ ./bin/tequila.mjs web-server-stop
-```
+The bot expects commands in a predefined format. Each command is processed in real-time, and the result is immediately
+sent back to the user. This straightforward interaction model ensures quick responses without complex dialogues.
 
-## Configuration
+## Setup
 
-File `./cfg/local.json` of the main app:
+To set up the bot, you need to clone the repository and install the dependencies using Node.js. You can configure your
+Telegram bot token and other settings in the bot's setup file.
 
-```json
-{
-  "@flancer32/teq-telegram-bot": {
-    "apiKeyTelegram": "..."
-  }
-}
-```
 
-## API
 
-* Telegram_Bot_Back_Api_Setup: setup the grammY bot, add the commands and handlers.
+## Project Purpose
+
+This project serves as a demo implementation for articles published on Habr and Medium, showcasing the basic structure and functionality of a Telegram bot using a CRUDL pattern.
+
+## Technology Stack
+
+The bot is built using the package `@flancer32/teq-telegram-bot`, which integrates the following libraries and tools:
+- **grammY**: A Telegram bot framework for handling interactions.
+- **commander**: A library for parsing and managing command-line arguments.
+- **knex.js**: SQL query builder for handling database operations.
+- **@teqfw/di**: Dependency Injection container for organizing code structure.
+
+### Database
+
+By default, the bot uses SQLite (file-based) for data storage. However, it can easily be configured to work with PostgreSQL or MySQL/MariaDB by connecting the appropriate drivers.
